@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sala de Troféus</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+        
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+        
+        .profile {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            background-color: #34495e;
+            color: white;
+        }
+        
+        .profile-info {
+            text-align: center;
+            margin-bottom: 15px;
+        }
+        
+        .trophy-container {
+            flex: 1;
+            padding: 15px;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 15px;
+            overflow-y: auto;
+        }
+        
+        .trophy-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 15px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        
+        .trophy-icon {
+            font-size: 40px;
+            margin-bottom: 10px;
+            color: #f1c40f;
+        }
+        
+        .trophy-place {
+            font-weight: bold;
+            color: #e67e22;
+            margin-bottom: 5px;
+        }
+        
+        .trophy-value {
+            color: #27ae60;
+            font-weight: bold;
+        }
+        
+        .trophy-name {
+            margin-bottom: 5px;
+            font-size: 16px;
+        }
+        
+        .empty-state {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 30px;
+            color: #7f8c8d;
+            grid-column: 1 / -1;
+        }
+        
+        .empty-icon {
+            font-size: 50px;
+            margin-bottom: 15px;
+            color: #bdc3c7;
+        }
+        
+        @media (max-width: 480px) {
+            .trophy-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .trophy-card {
+                flex-direction: row;
+                text-align: left;
+                align-items: center;
+                gap: 15px;
+            }
+            
+            .trophy-icon {
+                margin-bottom: 0;
+                font-size: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Sala de Troféus</h1>
+    </header>
+    
+    <div class="profile">
+        <div class="profile-info">
+            <h2 id="user-name">Nome do Usuário</h2>
+            <p id="user-id">ID: ######</p>
+        </div>
+    </div>
+    
+    <div class="trophy-container" id="trophy-container">
+        <!-- Troféus serão adicionados aqui dinamicamente -->
+        <div class="empty-state">
+            <div class="empty-icon">🏆</div>
+            <h3>Sua sala de troféus está vazia</h3>
+            <p>Participe de competições para ganhar troféus e prêmios!</p>
+        </div>
+    </div>
+
+    <script>
+        // Exemplo de como adicionar troféus dinamicamente
+        document.addEventListener('DOMContentLoaded', function() {
+            const trophyContainer = document.getElementById('trophy-container');
+            
+            // Exemplo de dados de troféus (substitua por dados reais)
+            const trophies = [
+                { name: "Torneio<br>Junho", place: "iniciar", value: "R$ 30,00" },
+                { name: "Torneio<br> Relâmpago", place: "iniciar", value: "R$ 30,00" },
+                { name: "Liga dos<br>Campeões", place: "iniciar", value: "R$ 50,00" },
+                { name: "Copa<br>Inverno", place: "iniciar", value: "R$ 30,00" }
+            ];
+            
+            // Se houver troféus, remove o estado vazio
+            if(trophies.length > 0) {
+                trophyContainer.innerHTML = '';
+            }
+            
+            // Adiciona cada troféu ao container
+            trophies.forEach(trophy => {
+                const trophyCard = document.createElement('div');
+                trophyCard.className = 'trophy-card';
+                trophyCard.innerHTML = `
+                    <div class="trophy-icon">🏆</div>
+                    <div class="trophy-name">${trophy.name}</div>
+                    <div class="trophy-place">${trophy.place}</div>
+                    <div class="trophy-value">${trophy.value}</div>
+                `;
+                trophyContainer.appendChild(trophyCard);
+            });
+            
+            // Exemplo de como definir nome e ID do usuário
+            document.getElementById('user-name').textContent = "indefinido";
+            document.getElementById('user-id').textContent = "Campeão atual";
+        });
+    </script>
+</body>
+</html>
