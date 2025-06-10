@@ -5,6 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sala de Troféus</title>
     <style>
+        .rodape {
+      position: fixed;
+      bottom: 10px;
+      right: 10px;
+      padding: 10px 15px;
+      background-color: rgba(241, 241, 241, 0.9);
+      text-align: right;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+      color: #000;
+      z-index: 1000;
+      font-weight: bold;
+        }
         * {
             margin: 0;
             padding: 0;
@@ -177,5 +192,8 @@
             document.getElementById('user-id').textContent = "Campeão atual";
         });
     </script>
+    <div class="rodape">
+    <a href="pagina-dos-jogadores.html">jogadores</a>
+</div>
 </body>
 </html>
