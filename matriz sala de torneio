@@ -169,8 +169,29 @@
             const trophies = [
                 { name: "Torneio<br>Junino", place: "3/8", value: "R$ 25,00" },
                 { name: "Torneio<br> Relâmpago", place: "iniciar", value: "R$ 25,00" },
-                { name: "Liga dos<br>Campeões", place: "iniciar", value: "R$ 50,00" },
-                { name: "Copa<br>Inverno", place: "iniciar", value: "R$ 25,00" }
+                { name: "Torneio<br> dos Brutos", place: "iniciar", value: "R$ 25,00" },
+                { name: "Torneio<br> dos AS", place: "iniciar", value: "R$ 25,00" },
+                { name: "Torneio dos<br>Operadores", place: "iniciar", value: "R$ 25,00" },
+                { name: "Torneio<br> Evangélicos", place: "iniciar", value: "R$ 25,00" },
+                { name: "Torneio<br> Madrugueira", place: "iniciar", value: "R$ 25,00" },
+                { name: "Torneio<br>Inverno", place: "iniciar", value: "R$ 25,00" },
+                { name: "Torneio<br>Maromba", place: "iniciar", value: "R$ 25,00" },
+                { name: "Torneio das<br>Comadres", place: "iniciar", value: "R$ 25,00" },
+                { name: "Torneio<br>Dorama", place: "iniciar", value: "R$ 25,00" },
+                { name: "Torneio das<br>Musas Fitness", place: "iniciar", value: "R$ 50,00" },
+                { name: "Torneio das<br>Poderosas", place: "iniciar", value: "R$ 50,00" },
+                { name: "Torneio<br>Arco-Íris", place: "iniciar", value: "R$ 50,00" },
+                { name: "Torneio do<br>Litrão", place: "iniciar", value: "R$ 50,00" },
+                { name: "Torneio<br>Academia Uze", place: "iniciar", value: "R$ 50,00" },
+                { name: "Torneio<br>Corinthians FC", place: "iniciar", value: "R$ 50,00" },
+                { name: "Torneio Sociedade<br>Esportiva Palmeiras", place: "iniciar", value: "R$ 50,00" },
+                { name: "Torneio<br>São Paulo FC", place: "iniciar", value: "R$ 50,00" },
+                { name: "Torneio<br>Santos FC", place: "iniciar", value: "R$ 50,00" },
+                { name: "Torneio<br>Jiu Jitsu", place: "iniciar", value: "R$ 50,00" },
+                { name: "Torneio<br>Faixa Preta", place: "iniciar", value: "R$ 50,00" },
+                { name: "Torneio<br>Jogador Caro", place: "iniciar", value: "R$ 50,00" },
+                { name: "Copa dos<br>Campeões", place: "iniciar", value: "R$ 160,00" },
+                { name: "Copa dos<br>Mestres", place: "iniciar", value: "R$ 260,00" }
             ];
             
             // Se houver troféus, remove o estado vazio
@@ -192,8 +213,8 @@
             });
             
             // Exemplo de como definir nome e ID do usuário
-            document.getElementById('user-name').textContent = "indefinido";
-            document.getElementById('user-id').textContent = "Campeão atual";
+            document.getElementById('user-name').textContent = "25";
+            document.getElementById('user-id').textContent = "Torneios";
         });
     </script>
     <div class="rodape">
